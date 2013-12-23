@@ -11,7 +11,7 @@ namespace WebAPI.Models
         Goods Get(int id);
         Goods Add(Goods item);
         void Remove(int id);
-        bool Update(Goods item);
+        Goods Update(Goods item);
 
 
     }

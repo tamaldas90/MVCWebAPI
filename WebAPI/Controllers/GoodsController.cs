@@ -52,14 +52,24 @@ namespace WebAPI.Controllers
         }
 
 
-        public void PutProduct(int id, Goods product)
+        public Goods PutProduct(int id, Goods item)
         {
-            product.Id = id;
-            if (!repository.Update(product))
+            item.Id = id;
+           /* if (repository.Update(item))
             {
                 throw new HttpResponseException(HttpStatusCode.NotFound);
-            }
+            }*/
+
+              return repository.Update(item);
+
         }
+
+
+        // PUT api/categories/5
+      /*  public void Put(int id, Category category)
+        {
+            _categoriesRepository.Update(category);
+        } */
 
 
 

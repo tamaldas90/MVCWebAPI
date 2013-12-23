@@ -46,7 +46,7 @@ namespace WebAPI.Models
             products.RemoveAll(p => p.Id == id);
         }
 
-        public bool Update(Goods item)
+        public Goods Update(Goods item)
         {
             if (item == null)
             {
@@ -55,11 +55,11 @@ namespace WebAPI.Models
             int index = products.FindIndex(p => p.Id == item.Id);
             if (index == -1)
             {
-                return false;
+                throw new ArgumentNullException("index"); ;
             }
             products.RemoveAt(index);
             products.Add(item);
-            return true;
+            return item;
         }
 
 
